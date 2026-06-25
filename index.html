@@ -1,0 +1,497 @@
+<!DOCTYPE html><html lang="ar" dir="rtl"><head><meta charset="UTF-8"><meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>ندوشتي بنتي حبيبتي ❤️</title><style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:Tahoma,sans-serif;
+background:linear-gradient(135deg,#ff758c,#ff7eb3);
+min-height:100vh;
+color:white;
+overflow-x:hidden;
+}
+
+#gift-screen{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+}
+
+.gift{
+font-size:120px;
+cursor:pointer;
+animation:bounce 1.5s infinite;
+filter:drop-shadow(0 0 20px rgba(255,255,255,.6));
+}
+
+h2{
+text-shadow:0 0 15px rgba(255,255,255,.5);
+}
+
+@keyframes bounce{
+0%,100%{
+transform:translateY(0);
+}
+50%{
+transform:translateY(-18px);
+}
+}
+
+.box{
+background:rgba(255,255,255,.18);
+backdrop-filter:blur(15px);
+padding:30px;
+border-radius:25px;
+text-align:center;
+width:90%;
+max-width:750px;
+margin:30px auto;
+display:none;
+box-shadow:0 0 25px rgba(0,0,0,.2);
+animation:fadeIn .8s ease;
+}
+
+@keyframes fadeIn{
+from{
+opacity:0;
+transform:translateY(30px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+input{
+width:85%;
+padding:14px;
+border:none;
+border-radius:12px;
+margin:15px 0;
+font-size:17px;
+text-align:center;
+}
+
+button{
+padding:12px 25px;
+border:none;
+border-radius:12px;
+cursor:pointer;
+background:white;
+color:#ff4f81;
+font-weight:bold;
+font-size:16px;
+transition:.3s;
+}
+
+button:hover{
+transform:scale(1.05);
+}
+
+.love-photo{
+width:280px;
+max-width:95%;
+border-radius:20px;
+margin:15px auto;
+display:block;
+animation:pulse 2s infinite;
+box-shadow:0 0 25px rgba(255,255,255,.4);
+border:3px solid rgba(255,255,255,.5);
+}
+
+@keyframes pulse{
+0%{
+transform:scale(1);
+}
+50%{
+transform:scale(1.05);
+}
+100%{
+transform:scale(1);
+}
+}
+
+.message{
+line-height:2.1;
+text-align:right;
+font-size:20px;
+}
+
+.heart{
+position:fixed;
+font-size:24px;
+animation:fly 6s linear forwards;
+pointer-events:none;
+}
+
+@keyframes fly{
+from{
+transform:translateY(100vh);
+opacity:1;
+}
+to{
+transform:translateY(-120px);
+opacity:0;
+}
+}
+
+#secret{
+display:none;
+margin-top:20px;
+padding:20px;
+border-radius:15px;
+background:rgba(255,255,255,.15);
+}
+
+#viewer{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.9);
+justify-content:center;
+align-items:center;
+z-index:9999;
+}
+
+#viewer img{
+max-width:90%;
+max-height:90%;
+border-radius:15px;
+}
+
+#hiddenGallery{
+display:none;
+margin-top:25px;
+}
+
+.memory-photo{
+width:320px;
+max-width:95%;
+display:block;
+margin:25px auto;
+border-radius:20px;
+opacity:0;
+transform:translateY(50px) scale(.8);
+box-shadow:0 0 30px rgba(255,255,255,.5);
+}
+
+.showMemory{
+animation:memoryShow 1.5s forwards;
+}
+
+@keyframes memoryShow{
+0%{
+opacity:0;
+transform:translateY(50px) scale(.8);
+}
+100%{
+opacity:1;
+transform:translateY(0) scale(1);
+}
+}
+
+#giftImageBox{
+display:none;
+margin-top:25px;
+animation:dramaticShow 1.5s ease forwards;
+}
+
+#giftImageBox img{
+width:320px;
+max-width:95%;
+border-radius:20px;
+box-shadow:0 0 35px rgba(255,255,255,.7);
+border:3px solid rgba(255,255,255,.5);
+}
+
+@keyframes dramaticShow{
+0%{
+opacity:0;
+transform:scale(.4) translateY(50px);
+}
+60%{
+opacity:1;
+transform:scale(1.1);
+}
+100%{
+opacity:1;
+transform:scale(1);
+}
+}
+
+</style></head>
+<body><div id="gift-screen"><div class="gift" onclick="openGift()">🎁</div><h2>
+🎁 عندك هدية صغيرة يا أجمل بنت في الدنيا ❤️
+</h2><p style="margin-top:10px;font-size:18px;">
+اضغطي على الهدية وشوفي المفاجأة 🌝💗
+</p></div><div class="box" id="login"><h1>
+ندوشتي بنتي حبيبتي ونور عيني 🌝💗
+</h1><p style="margin-top:10px;">
+اكتبي تاريخنا المميز ❤️
+</p><input
+type="password"
+id="password"
+placeholder="كلمة السر">
+
+<br><button onclick="checkPassword()">
+افتحي يا قلبي ❤️
+</button></div><div class="box" id="message"><audio id="music" loop>
+<source src="music.mp3" type="audio/mpeg">
+</audio><h1>
+ندوشتي حبيبتي ونور عيني 🌝❤️
+</h1><img
+src="love.jpg"
+class="love-photo"
+alt="Love">
+
+<h3 id="daysCounter"></h3><br>
+  <div class="message"> بنتي حبيبتي ونور عينى🌝💗
+<br><br>
+
+من أجمل الحاجات اللي حصلتلي في حياتي إني عرفتك💖
+ومن يوم ما دخلتي حياتي والدنيا بقت ألطف وأجمل بكتير 💖
+<br><br>
+
+وجودك جنبي بيفرق معايا في كل حاجة،
+في فرحتي وحزني وضحكتي وكل تفاصيل يومي ❤️
+
+<br><br>
+
+اغلى ما ليا ينور عينى.. البت اللى عايزة كل حاجة على مزاجها بس على مين دا انا اقنعها باى حاجة فى لحظة 😂♥️♥️
+<br><br>
+بحب طريقتك وكلامك واهتمامك،
+وبحب حتى خناقنا الصغير اللي بنرجع بعده نضحك من قلبنا 😂💖
+
+<br><br>
+من اول يوم شوفتك وانا مغرم بعيونك والله 🥹♥️ هى اللى عملت فيا كدا وخلتنى بستنى انى أشوفك ولو لمرة مع انى عارف مش هتكلم بس كنت بفرح انى بشوفك ولحد ما جت الفرصة بقا واتكلمنا يسكرتى 😂♥️♥️♥️
+<br><br>
+كل يوم بيعدي وأنا متأكد أكتر إني محظوظ إنك موجودة في حياتي،
+وإن ربنا رزقني بإنسانة جميلة زيك من جوه ومن بره 🌝💖
+
+<br><br>
+
+وعايزك تعرفي إني دايمًا هكون جنبك،
+وأفرح لفرحك،
+وأزعل لزعلك،
+وأدعمك في أي خطوة في حياتك ♥️
+
+<br><br>
+
+وأتمنى الأيام الجاية تكون كلها ضحك وفرح وحاجات حلوة تجمعنا أكتر وأكتر ♥️
+
+<br><br>
+
+وبصراحة...
+
+<br><br>
+
+عيونك لسه عاملة معايا مشكلة كبيرة جدًا 😂♥️
+
+<br><br>
+
+وسيبالي حقي منها لما أشوفك 😌♥️
+
+<br><br>
+عايزك تعرفى يعمرى انى هنا عشانك وعشان خاطر عيونك وبعمل اى حاجة عشان افرحك يسكرتى ♥️ كل الصدف دى جمعتنا ببعض وتكمل بينا على خير ونتجمع مع بعض و أتمنى تفضلى سند ليا أنا بقوى بيكى والله 🥹♥️ 
+<br><br>
+بحبك يا نور عيني،
+وهفضل أحبك وأتمسك بيكي مهما حصل ♥️🫶
+
+</div>
+<h2 style="margin-top:25px;">
+📸 ذكرياتنا الجميلة
+</h2><button onclick="showGallery()">
+📸 افتحي الذكريات
+</button><div id="hiddenGallery"><img src="love1.jpg"
+class="memory-photo">
+
+<img src="love2.jpg"
+class="memory-photo">
+
+<img src="love3.jpg"
+class="memory-photo">
+
+</div><button
+onclick="showSecret()"
+style="margin-top:25px;">
+
+افتحى الماسيج دى 💖 
+
+</button><div id="secret"><h2>ندوشتى حبيبتى💖 
+</h2><p style="margin-top:10px;">مهما حصل...
+
+هتفضلي أجمل صدفة وأغلى إنسانة في قلبي،
+
+وكل يوم بحبك أكتر من اليوم اللي قبله ❤️🫶
+
+</p></div><br><br>
+
+<button onclick="showGiftImage()">🎁دوسى كدا على هديتك
+
+</button><div id="giftImageBox"><img src="gift.jpg"
+alt="هدية">
+
+</div></div><div id="viewer"
+onclick="this.style.display='none'"><img id="viewerImg"></div>
+<script>
+
+function openGift(){
+
+document.getElementById("gift-screen")
+.style.display="none";
+
+document.getElementById("login")
+.style.display="block";
+
+}
+
+function checkPassword(){
+
+let pass =
+document.getElementById("password")
+.value
+.trim();
+
+if(pass === "16/6"){
+
+document.getElementById("music")
+.play();
+
+alert("أهلاً بأجمل بنت في الدنيا ❤️");
+
+document.getElementById("login")
+.style.display="none";
+
+document.getElementById("message")
+.style.display="block";
+
+}else{
+
+alert("جربي تاني يا قلبي ❤️");
+
+}
+
+}
+
+document
+.getElementById("password")
+.addEventListener("keypress",function(e){
+
+if(e.key==="Enter"){
+checkPassword();
+}
+
+});
+
+function showSecret(){
+
+const secret =
+document.getElementById("secret");
+
+secret.style.display="block";
+
+secret.scrollIntoView({
+behavior:"smooth"
+});
+
+}
+
+function showGallery(){
+
+const gallery =
+document.getElementById("hiddenGallery");
+
+gallery.style.display="block";
+
+const photos =
+document.querySelectorAll(".memory-photo");
+
+photos.forEach((photo,index)=>{
+
+setTimeout(()=>{
+
+photo.classList.add("showMemory");
+
+},index * 1200);
+
+});
+
+gallery.scrollIntoView({
+behavior:"smooth"
+});
+
+}
+
+function showGiftImage(){
+
+const box =
+document.getElementById("giftImageBox");
+
+box.style.display="block";
+
+box.scrollIntoView({
+behavior:"smooth"
+});
+
+}
+
+const startDate =
+new Date("2026-06-16");
+
+function updateCounter(){
+
+const today = new Date();
+
+const diff =
+today - startDate;
+
+const days =
+Math.floor(
+diff/(1000*60*60*24)
+);
+
+document
+.getElementById("daysCounter")
+.innerHTML =
+"❤️ مر " +
+days +
+" يوم من أجمل تاريخ ❤️";
+
+}
+
+updateCounter();
+
+setInterval(()=>{
+
+let heart =
+document.createElement("div");
+
+heart.className="heart";
+
+heart.innerHTML="💖";
+
+heart.style.left=
+Math.random()*100+"vw";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},6000);
+
+},800);
+
+</script></body></html>
